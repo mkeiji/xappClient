@@ -1,5 +1,5 @@
 module.exports = {
-    name: 'example',
+    name: 'constants',
     preset: '../../jest.config.js',
     setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
     globals: {
@@ -12,7 +12,7 @@ module.exports = {
             ]
         }
     },
-    coverageDirectory: '../../coverage/libs/example',
+    coverageDirectory: '../../coverage/libs/constants',
     snapshotSerializers: [
         'jest-preset-angular/build/AngularNoNgAttributesSnapshotSerializer.js',
         'jest-preset-angular/build/AngularSnapshotSerializer.js',

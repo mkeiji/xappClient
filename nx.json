@@ -1,36 +1,39 @@
 {
-  "npmScope": "client",
-  "affected": {
-    "defaultBase": "master"
-  },
-  "implicitDependencies": {
-    "angular.json": "*",
-    "package.json": {
-      "dependencies": "*",
-      "devDependencies": "*"
+    "npmScope": "client",
+    "affected": {
+        "defaultBase": "master"
     },
-    "tsconfig.base.json": "*",
-    "tslint.json": "*",
-    "nx.json": "*"
-  },
-  "tasksRunnerOptions": {
-    "default": {
-      "runner": "@nrwl/workspace/tasks-runners/default",
-      "options": {
-        "cacheableOperations": ["build", "lint", "test", "e2e"]
-      }
+    "implicitDependencies": {
+        "angular.json": "*",
+        "package.json": {
+            "dependencies": "*",
+            "devDependencies": "*"
+        },
+        "tsconfig.base.json": "*",
+        "tslint.json": "*",
+        "nx.json": "*"
+    },
+    "tasksRunnerOptions": {
+        "default": {
+            "runner": "@nrwl/workspace/tasks-runners/default",
+            "options": {
+                "cacheableOperations": ["build", "lint", "test", "e2e"]
+            }
+        }
+    },
+    "projects": {
+        "xapp": {
+            "tags": []
+        },
+        "xapp-e2e": {
+            "tags": [],
+            "implicitDependencies": ["xapp"]
+        },
+        "example": {
+            "tags": []
+        },
+        "constants": {
+            "tags": []
+        }
     }
-  },
-  "projects": {
-    "xapp": {
-      "tags": []
-    },
-    "xapp-e2e": {
-      "tags": [],
-      "implicitDependencies": ["xapp"]
-    },
-    "example": {
-      "tags": []
-    }
-  }
 }
