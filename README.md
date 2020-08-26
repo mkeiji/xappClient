@@ -25,7 +25,7 @@ Navigate to [http://localhost:4000/](http://localhost:4000)
 
 ### To run unit tests
 ``` bash
-ng test xapp
+nx test xapp
 ```
 To execute the unit tests via [Jest](https://jestjs.io).
 
@@ -37,19 +37,19 @@ to execute the unit tests affected by a change.
 ### CLI
 #### Add Component
 ``` bash
-ng g component my-component --project=xapp
+nx g component my-component --project=my-lib-or-project --export
 ```
 to generate a new component.
 
 #### Build
 ``` bash
-ng build xapp
+nx build xapp
 ```
 to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 
 #### Generate a library
 ``` bash
-ng g @nrwl/angular:lib my-lib
+nx g @nrwl/angular:lib my-lib
 ```
 to generate a library.
 > Libraries are sharable across libraries and applications. They can be imported from `@client/mylib`.

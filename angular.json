@@ -25,7 +25,10 @@
                             "apps/xapp/src/favicon.ico",
                             "apps/xapp/src/assets"
                         ],
-                        "styles": ["apps/xapp/src/styles.scss"],
+                        "styles": [
+                            "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
+                            "apps/xapp/src/styles.scss"
+                        ],
                         "scripts": []
                     },
                     "configurations": {
