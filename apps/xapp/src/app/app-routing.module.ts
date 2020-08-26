@@ -1,8 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { ExampleModule } from '@client/example';
-import { ConstantsModule } from '@client/constants';
-import { APP_ROUTES } from 'libs/constants/src/lib/routes/routes';
+import { ConstantsModule, APP_ROUTES } from '@client/constants';
 
 @NgModule({
     declarations: [],
