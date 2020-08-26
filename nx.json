@@ -28,6 +28,9 @@
     "xapp-e2e": {
       "tags": [],
       "implicitDependencies": ["xapp"]
+    },
+    "example": {
+      "tags": []
     }
   }
 }
