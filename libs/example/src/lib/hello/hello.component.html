@@ -1,2 +1,13 @@
-<h1>hello world!</h1>
-<button mat-raised-button color="primary">Material Button</button>
+<div class="container d-flex justify-content-center p-3">
+    <button mat-raised-button color="primary" (click)="onViewButtonClick()">
+        {{ viewButtonText }}
+    </button>
+</div>
+<div *ngIf="!checkDBFlag; else showUserComponent">
+    <client-add-edit-user
+        [parentFormBranch]="userFormGroup"
+    ></client-add-edit-user>
+</div>
+<ng-template #showUserComponent>
+    <client-show-users [parentFormBranch]="userFormGroup"></client-show-users>
+</ng-template>

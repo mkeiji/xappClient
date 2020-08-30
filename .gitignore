@@ -25,6 +25,10 @@ package-lock.json
 !.vscode/launch.json
 !.vscode/extensions.json
 
+# IDE - Vim
+.undodir/
+Session.vim
+
 # misc
 /.sass-cache
 /connect.lock

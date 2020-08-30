@@ -29,7 +29,8 @@
                             "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
                             "apps/xapp/src/styles.scss"
                         ],
-                        "scripts": []
+                        "scripts": [],
+                        "allowedCommonJsDependencies": ["lodash"]
                     },
                     "configurations": {
                         "production": {
@@ -186,6 +187,76 @@
                         "tsConfig": "libs/constants/tsconfig.spec.json",
                         "passWithNoTests": true,
                         "setupFile": "libs/constants/src/test-setup.ts"
+                    }
+                }
+            },
+            "schematics": {
+                "@nrwl/angular:component": {
+                    "style": "scss"
+                }
+            }
+        },
+        "interfaces": {
+            "projectType": "library",
+            "root": "libs/interfaces",
+            "sourceRoot": "libs/interfaces/src",
+            "prefix": "client",
+            "architect": {
+                "lint": {
+                    "builder": "@angular-devkit/build-angular:tslint",
+                    "options": {
+                        "tsConfig": [
+                            "libs/interfaces/tsconfig.lib.json",
+                            "libs/interfaces/tsconfig.spec.json"
+                        ],
+                        "exclude": [
+                            "**/node_modules/**",
+                            "!libs/interfaces/**/*"
+                        ]
+                    }
+                },
+                "test": {
+                    "builder": "@nrwl/jest:jest",
+                    "options": {
+                        "jestConfig": "libs/interfaces/jest.config.js",
+                        "tsConfig": "libs/interfaces/tsconfig.spec.json",
+                        "passWithNoTests": true,
+                        "setupFile": "libs/interfaces/src/test-setup.ts"
+                    }
+                }
+            },
+            "schematics": {
+                "@nrwl/angular:component": {
+                    "style": "scss"
+                }
+            }
+        },
+        "api-service": {
+            "projectType": "library",
+            "root": "libs/api-service",
+            "sourceRoot": "libs/api-service/src",
+            "prefix": "client",
+            "architect": {
+                "lint": {
+                    "builder": "@angular-devkit/build-angular:tslint",
+                    "options": {
+                        "tsConfig": [
+                            "libs/api-service/tsconfig.lib.json",
+                            "libs/api-service/tsconfig.spec.json"
+                        ],
+                        "exclude": [
+                            "**/node_modules/**",
+                            "!libs/api-service/**/*"
+                        ]
+                    }
+                },
+                "test": {
+                    "builder": "@nrwl/jest:jest",
+                    "options": {
+                        "jestConfig": "libs/api-service/jest.config.js",
+                        "tsConfig": "libs/api-service/tsconfig.spec.json",
+                        "passWithNoTests": true,
+                        "setupFile": "libs/api-service/src/test-setup.ts"
                     }
                 }
             },

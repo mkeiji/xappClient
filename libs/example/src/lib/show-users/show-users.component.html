@@ -1,0 +1,61 @@
+<div class="container p-3">
+    <mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+        <ng-container matColumnDef="id">
+            <mat-header-cell *matHeaderCellDef> Id </mat-header-cell>
+            <mat-cell *matCellDef="let user">
+                {{ user.id }}
+            </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="userName">
+            <mat-header-cell *matHeaderCellDef> User </mat-header-cell>
+            <mat-cell *matCellDef="let user">
+                {{ user.userName }}
+            </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="firstName">
+            <mat-header-cell *matHeaderCellDef> FirstName </mat-header-cell>
+            <mat-cell *matCellDef="let user">
+                {{ user.firstName }}
+            </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="lastName">
+            <mat-header-cell *matHeaderCellDef> LastName </mat-header-cell>
+            <mat-cell *matCellDef="let user">
+                {{ user.lastName }}
+            </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="actions">
+            <mat-header-cell
+                *matHeaderCellDef
+                class="d-flex justify-content-center"
+            >
+                Actions
+            </mat-header-cell>
+            <mat-cell
+                *matCellDef="let row"
+                class="d-flex justify-content-center"
+            >
+                <button mat-button (click)="onEditUser(row.id)">
+                    <mat-icon>edit</mat-icon>
+                </button>
+                <button mat-button (click)="onDeleteUser(row.id)">
+                    <mat-icon>delete</mat-icon>
+                </button>
+            </mat-cell>
+        </ng-container>
+
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+    </mat-table>
+</div>
+
+<div *ngIf="showAddComponent" class="container p-3">
+    <client-add-edit-user
+        [parentFormBranch]="parentFormBranch"
+        (actionDone)="onActionDone($event)"
+    ></client-add-edit-user>
+</div>

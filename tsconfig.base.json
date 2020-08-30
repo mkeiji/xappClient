@@ -17,7 +17,9 @@
         "baseUrl": ".",
         "paths": {
             "@client/example": ["libs/example/src/index.ts"],
-            "@client/constants": ["libs/constants/src/index.ts"]
+            "@client/constants": ["libs/constants/src/index.ts"],
+            "@client/interfaces": ["libs/interfaces/src/index.ts"],
+            "@client/api-service": ["libs/api-service/src/index.ts"]
         }
     },
     "exclude": ["node_modules", "tmp"]
